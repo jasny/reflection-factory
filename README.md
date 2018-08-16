@@ -4,7 +4,7 @@ Jasny Reflection factory
 [![Build Status](https://travis-ci.org/jasny/reflection-factory.svg?branch=master)](https://travis-ci.org/jasny/reflection-factory)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jasny/reflection-factory/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jasny/reflection-factory/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/jasny/reflection-factory/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/jasny/reflection-factory/?branch=master)
-_SensioLabsInsight_
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/75aab1c0-1981-4549-8129-9de640c55131/mini.png)](https://insight.sensiolabs.com/projects/75aab1c0-1981-4549-8129-9de640c55131)
 [![BCH compliance](https://bettercodehub.com/edge/badge/jasny/reflection-factory?branch=master)](https://bettercodehub.com/)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/jasny/reflection-factory.svg)](https://packagist.org/packages/jasny/reflection-factory)
 [![Packagist License](https://img.shields.io/packagist/l/jasny/reflection-factory.svg)](https://packagist.org/packages/jasny/reflection-factory)
