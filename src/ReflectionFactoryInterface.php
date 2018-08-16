@@ -54,7 +54,7 @@ interface ReflectionFactoryInterface
      * Create a ReflectionFunction.
      * @see \ReflectionFunction
      *
-     * @param string|Closure $name  The name of the function to reflect or a closure.
+     * @param string|\Closure $name  The name of the function to reflect or a closure.
      * @return \ReflectionFunction
      * @throws \ReflectionException
      */
