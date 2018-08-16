@@ -46,23 +46,21 @@ class ReflectionFactoryTest extends TestCase
 
     public function testReflectClassConstantWithClass()
     {
-        $reflection = $this->factory->reflectClassConstant('DateTime', 'ATOM');
+        $reflection = $this->factory->reflectClassConstant(\ReflectionClass::class, 'IS_FINAL');
 
         $this->assertInstanceOf(\ReflectionClassConstant::class, $reflection);
-        $this->assertEquals('ATOM', $reflection->getName());
-        $this->assertEquals('DateTime', $reflection->getDeclaringClass()->getName());
-        $this->assertEquals("Y-m-d\TH:i:sP", $reflection->getValue());
+        $this->assertEquals('IS_FINAL', $reflection->getName());
+        $this->assertEquals('ReflectionClass', $reflection->getDeclaringClass()->getName());
     }
 
     public function testReflectClassConstantWithObject()
     {
-        $datetime = new \DateTime();
-        $reflection = $this->factory->reflectClassConstant($datetime, 'ATOM');
+        $object = new \ReflectionClass(self::class);
+        $reflection = $this->factory->reflectClassConstant($object, 'IS_FINAL');
 
         $this->assertInstanceOf(\ReflectionClassConstant::class, $reflection);
-        $this->assertEquals('ATOM', $reflection->getName());
-        $this->assertEquals('DateTime', $reflection->getDeclaringClass()->getName());
-        $this->assertEquals("Y-m-d\TH:i:sP", $reflection->getValue());
+        $this->assertEquals('IS_FINAL', $reflection->getName());
+        $this->assertEquals('ReflectionClass', $reflection->getDeclaringClass()->getName());
     }
 
     public function testReflectZendExtension()
@@ -254,7 +252,7 @@ class ReflectionFactoryTest extends TestCase
 
     public function testMethodExistsWithObject()
     {
-        $object = new \ReflectionClass(static::class);
+        $object = new \ReflectionClass(self::class);
 
         $this->assertTrue($this->factory->methodExists($object, 'getName'));
         $this->assertFalse($this->factory->methodExists($object, 'nonExisting'));
@@ -269,7 +267,7 @@ class ReflectionFactoryTest extends TestCase
 
     public function testPropertyExistsWithObject()
     {
-        $object = new \ReflectionClass(static::class);
+        $object = new \ReflectionClass(self::class);
 
         $this->assertTrue($this->factory->propertyExists($object, 'name'));
         $this->assertFalse($this->factory->propertyExists($object, 'non_existing'));
