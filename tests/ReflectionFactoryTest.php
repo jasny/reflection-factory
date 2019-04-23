@@ -294,4 +294,15 @@ class ReflectionFactoryTest extends TestCase
         $this->assertTrue($this->factory->extensionLoaded($extension));
         $this->assertFalse($this->factory->extensionLoaded('non_existing'));
     }
+
+    public function testIsA()
+    {
+        $this->assertTrue($this->factory->isA(new \LogicException(''), \LogicException::class));
+        $this->assertTrue($this->factory->isA(new \InvalidArgumentException(''), \LogicException::class));
+        $this->assertFalse($this->factory->isA(new \UnexpectedValueException(''), \LogicException::class));
+
+        $this->assertFalse($this->factory->isA(\InvalidArgumentException::class, \LogicException::class));
+        $this->assertTrue($this->factory->isA(\InvalidArgumentException::class, \LogicException::class, true));
+    }
 }
+

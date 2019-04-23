@@ -161,4 +161,15 @@ interface ReflectionFactoryInterface
      * @return bool
      */
     public function extensionLoaded(string $name): bool;
+
+    /**
+     * Checks if the object is of this class or has this class as one of its parents.
+     * @see is_a()
+     *
+     * @param object|string $object        Object instance or class name.
+     * @param string        $class         The class or interface name.
+     * @param bool          $allow_string  Allow class name as `object`
+     * @return bool
+     */
+    public function isA($object, string $class, bool $allow_string = false): bool;
 }
