@@ -156,3 +156,4 @@ Some PHP functions have been wrapped, so they can be mocked
 | `methodExists`               | [`method_exists`](https://php.net/method_exists)       |
 | `propertyExists`             | [`property_exists`](https://php.net/property_exists)   |
 | `extensionLoaded`            | [`extension_loaded`](https://php.net/extension_loaded) |
+| `isA`                        | [`is_a`](https://php.net/is_a)                         |
