@@ -172,4 +172,14 @@ interface ReflectionFactoryInterface
      * @return bool
      */
     public function isA($object, string $class, bool $allow_string = false): bool;
+
+    /**
+     * Verify that the contents of a variable can be called as a function.
+     * @see is_callable()
+     *
+     * @param mixed $var         The value to check.
+     * @param bool  $syntaxOnly  If set to TRUE the function only verifies that name might be a function or method.
+     * @return bool
+     */
+    public function isCallable($var, bool $syntaxOnly = false): bool;
 }

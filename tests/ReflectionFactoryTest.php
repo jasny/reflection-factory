@@ -304,5 +304,59 @@ class ReflectionFactoryTest extends TestCase
         $this->assertFalse($this->factory->isA(\InvalidArgumentException::class, \LogicException::class));
         $this->assertTrue($this->factory->isA(\InvalidArgumentException::class, \LogicException::class, true));
     }
+
+    public function testIsCallable()
+    {
+        $this->assertFalse($this->factory->isCallable(22));
+        $this->assertFalse($this->factory->isCallable([]));
+        $this->assertFalse($this->factory->isCallable(new \LogicException('')));
+        $this->assertFalse($this->factory->isCallable(true));
+
+        $this->assertTrue($this->factory->isCallable('str_replace'));
+        $this->assertFalse($this->factory->isCallable('non_existing'));
+
+        $this->assertTrue($this->factory->isCallable(function () {}));
+
+        $object = new class () {
+            public function foo() {}
+            protected function bar() {}
+        };
+        $this->assertFalse($this->factory->isCallable($object));
+        $this->assertTrue($this->factory->isCallable([$object, 'foo']));
+        $this->assertFalse($this->factory->isCallable([$object, 'bar']));
+        $this->assertFalse($this->factory->isCallable([$object, 'qux']));
+
+        $invokable = new class () {
+            public function __invoke() {}
+        };
+        $this->assertTrue($this->factory->isCallable($invokable));
+    }
+
+    public function testIsCallableSyntaxOnly()
+    {
+        $this->assertFalse($this->factory->isCallable(22, true));
+        $this->assertFalse($this->factory->isCallable([], true));
+        $this->assertFalse($this->factory->isCallable(new \LogicException(''), true));
+        $this->assertFalse($this->factory->isCallable(true, true));
+
+        $this->assertTrue($this->factory->isCallable('str_replace', true));
+        $this->assertTrue($this->factory->isCallable('non_existing', true));
+
+        $this->assertTrue($this->factory->isCallable(function () {}, true));
+
+        $object = new class () {
+            public function foo() {}
+            protected function bar() {}
+        };
+        $this->assertFalse($this->factory->isCallable($object, true));
+        $this->assertTrue($this->factory->isCallable([$object, 'foo'], true));
+        $this->assertTrue($this->factory->isCallable([$object, 'bar'], true));
+        $this->assertTrue($this->factory->isCallable([$object, 'qux'], true));
+
+        $invokable = new class () {
+            public function __invoke() {}
+        };
+        $this->assertTrue($this->factory->isCallable($invokable));
+    }
 }
 
