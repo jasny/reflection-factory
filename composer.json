@@ -1,6 +1,6 @@
 {
     "name": "jasny/reflection-factory",
-    "description": "Jasny skeleton library",
+    "description": "Abstract factory for PHP Reflection",
     "license": "MIT",
     "type": "library",
     "authors": [
