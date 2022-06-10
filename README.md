@@ -106,7 +106,7 @@ class SomeTool
 }
 ```
 
-In the unit test we mock both the `ReflectionClass` and `ReflectionFactory`. The tests class `FakeClass` doesn't need
+In the unit test, we mock the `ReflectionClass` and `ReflectionFactory`. The tests class `FakeClass` doesn't need
 to exist.
 
 ```php
@@ -127,7 +127,7 @@ class SomeToolTest extends TestCase
             
         $tool = new SomeTool($mockFactory);
         
-        $this->assertEquals(10, $tool->foo("SomeToolTestFooSupport"));
+        $this->assertEquals(10, $tool->foo("FakeClass"));
     }
 }
 ```
