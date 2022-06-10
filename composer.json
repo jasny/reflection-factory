@@ -15,10 +15,11 @@
         "source": "https://github.com/jasny/reflection-factory"
     },
     "require": {
-        "php": ">=7.2.0"
+        "php": ">=7.4.0"
     },
     "require-dev": {
-        "jasny/php-code-quality": "^2.3"
+        "phpunit/phpunit": "^9.0",
+        "jasny/php-code-quality": "~2.7.0"
     },
     "autoload": {
         "psr-4": {
