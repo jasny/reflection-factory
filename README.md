@@ -1,7 +1,7 @@
 Jasny Reflection factory
 ===
 
-[![Build Status](https://travis-ci.org/jasny/reflection-factory.svg?branch=master)](https://travis-ci.org/jasny/reflection-factory)
+[![PHP](https://github.com/jasny/reflection-factory/actions/workflows/php.yml/badge.svg)](https://github.com/jasny/reflection-factory/actions/workflows/php.yml)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jasny/reflection-factory/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jasny/reflection-factory/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/jasny/reflection-factory/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/jasny/reflection-factory/?branch=master)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/jasny/reflection-factory.svg)](https://packagist.org/packages/jasny/reflection-factory)
